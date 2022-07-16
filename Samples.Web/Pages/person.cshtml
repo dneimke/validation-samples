@@ -1,0 +1,10 @@
+﻿@page
+@model Samples.Web.Pages.personModel
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    Name:
+    <input asp-for="Person!.Name" />
+    <input type="submit" />
+</form>

@@ -22,12 +22,12 @@ app.MapRazorPages();
 
 app.MapGet("/foo", () => "Hello Foo");
 
-app.MapPost("/person", (Validated<Person> req) =>
+app.MapPost("/post-person", (Validated<Person> req) =>
 {
     var (isValid, value) = req;
 
     return isValid
-    ? Ok(value)
+    ? RedirectToRoute("/person", value)
     : ValidationProblem(req.Errors);
 });
 

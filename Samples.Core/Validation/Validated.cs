@@ -33,8 +33,8 @@ namespace Samples.Core.Validation
         public static async ValueTask<Validated<T>> BindAsync(HttpContext context, ParameterInfo parameter)
         {
             var value = await context.Request.ReadFromJsonAsync<T>();
-            
-            if(value == null)
+
+            if (value == null)
             {
                 throw new ArgumentNullException(parameter.Name);
             }
