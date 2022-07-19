@@ -9,7 +9,9 @@ namespace Samples.Core.Models
         public PersonValidator()
         {
             RuleFor(x => x.Name).NotEmpty();
-            RuleFor(x => x.Age).NotEmpty().GreaterThan(0);
+            RuleFor(x => x.Age).NotEmpty()
+                .InclusiveBetween(5, 65)
+                .WithMessage("The person's age must be between 5 and 65.");
         }
     }
 }

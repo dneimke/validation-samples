@@ -1,0 +1,21 @@
+﻿@page 
+@model Samples.Web.Pages.annotations.IndexModel
+
+@if(TempData.ContainsKey("Message"))
+{
+    <p class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </p>
+}
+
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Vehicle!.Model" class="control-label"></label>
+        <input asp-for="Vehicle!.Model" class="form-control" />
+        <span asp-validation-for="Vehicle!.Model" class="text-danger"></span>
+    </div>
+    <input type="submit" />
+</form>
