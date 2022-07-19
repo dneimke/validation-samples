@@ -1,0 +1,25 @@
+﻿@page
+@model Samples.Web.Pages.personModel
+
+@if(TempData.ContainsKey("Message"))
+{
+    <p class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </p>
+}
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Person!.Name" class="control-label"></label>
+        <input asp-for="Person!.Name" class="form-control" />
+        <span asp-validation-for="Person!.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Person!.Age" class="control-label"></label>
+        <input asp-for="Person!.Age" class="form-control" />
+        <span asp-validation-for="Person!.Age" class="text-danger"></span>
+    </div>
+    <input type="submit" />
+</form>
