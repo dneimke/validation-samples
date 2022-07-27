@@ -1,0 +1,25 @@
+﻿@page
+@model Samples.Web.Pages.cross_cutting.mediatorModel
+
+@if (TempData.ContainsKey("Message"))
+{
+    <p class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </p>
+}
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Pet.Name" class="control-label"></label>
+        <input asp-for="Pet.Name" class="form-control" />
+        <span asp-validation-for="Pet.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Pet.Species" class="control-label"></label>
+        <input asp-for="Pet.Species" class="form-control" />
+        <span asp-validation-for="Pet.Species" class="text-danger"></span>
+    </div>
+    <input type="submit" />
+</form>
