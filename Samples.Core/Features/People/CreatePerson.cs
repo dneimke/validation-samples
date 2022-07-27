@@ -8,7 +8,7 @@ namespace Samples.Core.Features.People
     {
         public class Request : IRequest<Response>
         {
-            public Person Person { get; set; }
+            public Person Person { get; set; } = new("", 0);
         }
 
         public class Response
